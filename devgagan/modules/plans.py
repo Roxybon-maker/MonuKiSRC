@@ -160,7 +160,7 @@ async def transfer_premium(client, message):
                 f"👤 **From:** {sender_user.mention}\n"
                 f"👤 **To:** {new_user.mention}\n"
                 f"⏳ **Expiry Date:** {expiry_str_in_ist}\n\n"
-                f"__Powered by CHOSEN ONE ⚝__ 🚀"
+                f"__Powered by [꧁༺ȶɦɛ ʊռӄռօառ ֆȶǟʀ༻꧂](https://t.me/xTaR_Force_Sub)"
             )
             
             # Notification to the new user
