@@ -76,8 +76,8 @@ async def token_handler(client, message):
 
     if len(message.command) <= 1:
         image_url = "https://freeimage.host/i/F5dGOsj"  # must end with .jpg/.png etc.
-        join_button = InlineKeyboardButton("✈️ Main Channel", url="https://t.me/studywithsv")
-        premium = InlineKeyboardButton("🦋 Contact Owner", url="https://t.me/studywithsv")
+        join_button = InlineKeyboardButton("✈️ Main Channel", url="https://t.me/xTaR_Force_Sub")
+        premium = InlineKeyboardButton("🦋 Contact Owner", url="https://t.me/xTaR_Force_Sub")
         keyboard = InlineKeyboardMarkup([
             [join_button],
             [premium]
@@ -98,7 +98,7 @@ async def token_handler(client, message):
                 "🔐 **Private channel post?**\n"
                 "➤ First do /login to save posts from Private Channel\n\n"
                 "💡 Need help? Send /guide\n For More Features Use /settings 😉 \n\n"
-                ">⚡ Bot Made by CHOSEN ONE ⚝"
+                ">⚡ Bot Made by [꧁༺ȶɦɛ ʊռӄռօառ ֆȶǟʀ༻꧂](https://t.me/xTaR_Force_Sub)"
             ),
             reply_markup=keyboard,  # ✅ fixed here
             message_effect_id=5104841245755180586
