@@ -10,9 +10,6 @@ INST_COOKIES = """
 """
 
 YTUB_COOKIES = """
-# # Netscape HTTP Cookie File
-# http://curl.haxx.se/rfc/cookie_spec.html
-# This is a generated file!  Do not edit.
 
 .youtube.com	TRUE	/	TRUE	1753371966	GPS	1
 .youtube.com	TRUE	/	FALSE	1787930311	HSID	AJmgJFat6cEQLmnFv
