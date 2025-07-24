@@ -109,7 +109,7 @@ help_pages = [
         "> 4. REPLACEWORDS : Can be used for words in deleted set via REMOVE WORDS\n"
         "> 5. RESET : To set the things back to default\n\n"
         "> You can set CUSTOM THUMBNAIL, PDF WATERMARK, VIDEO WATERMARK, SESSION-based login, etc. from settings\n\n"
-        "**__Powered by CHOSEN ONE ⚝__**"
+        "**__Powered by [꧁༺ȶɦɛ ʊռӄռօառ ֆȶǟʀ༻꧂](https://t.me/xTaR_Force_Sub)**"
     )
 ]
  
@@ -183,7 +183,7 @@ async def terms(client, message):
     buttons = InlineKeyboardMarkup(
         [
             [InlineKeyboardButton("📋 See Plans", callback_data="see_plan")],
-            [InlineKeyboardButton("💬 Contact Now", url="https://t.me/GeniusJunctionX")],
+            [InlineKeyboardButton("💬 Contact Now", url="https://t.me/xTaR_Force_Sub")],
         ]
     )
     await message.reply_text(terms_text, reply_markup=buttons)
@@ -202,7 +202,7 @@ async def plan(client, message):
     buttons = InlineKeyboardMarkup(
         [
             [InlineKeyboardButton("📜 See Terms", callback_data="see_terms")],
-            [InlineKeyboardButton("💬 Contact Now", url="https://t.me/GeniusJunctionX")],
+            [InlineKeyboardButton("💬 Contact Now", url="https://t.me/xTaR_Force_Sub")],
         ]
     )
     await message.reply_text(plan_text, reply_markup=buttons)
@@ -221,7 +221,7 @@ async def see_plan(client, callback_query):
     buttons = InlineKeyboardMarkup(
         [
             [InlineKeyboardButton("📜 See Terms", callback_data="see_terms")],
-            [InlineKeyboardButton("💬 Contact Now", url="https://t.me/GeniusJunctionX")],
+            [InlineKeyboardButton("💬 Contact Now", url="https://t.me/xTaR_Force_Sub")],
         ]
     )
     await callback_query.message.edit_text(plan_text, reply_markup=buttons)
@@ -239,7 +239,7 @@ async def see_terms(client, callback_query):
     buttons = InlineKeyboardMarkup(
         [
             [InlineKeyboardButton("📋 See Plans", callback_data="see_plan")],
-            [InlineKeyboardButton("💬 Contact Now", url="https://t.me/GeniusJunctionX")],
+            [InlineKeyboardButton("💬 Contact Now", url="https://t.me/xTaR_Force_Sub")],
         ]
     )
     await callback_query.message.edit_text(terms_text, reply_markup=buttons)
@@ -273,7 +273,7 @@ async def guide_page_2(_, query: CallbackQuery):
         "💡 Use /login only for private source.\n"
         "Use /id to get user or chat ID.\n\n"
         "Use /batch to download multiple posts at once 💀\n\n"
-        "Powered by CHOSEN ONE ⚝",
+        "Powered by [꧁༺ȶɦɛ ʊռӄռօառ ֆȶǟʀ༻꧂](https://t.me/xTaR_Force_Sub)",
         reply_markup=InlineKeyboardMarkup([
             [InlineKeyboardButton("⬅️ Back", callback_data="guide_page_1")]
         ])
@@ -283,7 +283,7 @@ async def guide_page_2(_, query: CallbackQuery):
 @app.on_callback_query(filters.regex("^guide_page_1$"))  # ^ and $ ensure exact match
 async def guide_page_1(_, query: CallbackQuery):
     await query.message.edit_text(
-        "**📘 How to Use @SRC_PRO_BOT Guide 👇**\n\n"
+        "**📘 How to Use @DsSaver_bot Guide 👇**\n\n"
         "💡 **For Private Channels/Groups**\n\n"
         "**How to download or forward posts from Private Channel/Groups Where Save is Restricted 💀**\n"
         "────────────────────\n"
@@ -301,7 +301,7 @@ async def guide_page_1(_, query: CallbackQuery):
         "⚡ Now use /batch to download multiple posts.\n"
         "▭▭▭▭▭▭▭▭▭▭▭▭▭▭▭\n\n"
         "**हिंदी में 👇**\n\n"
-        "**@SRC_PRO_BOT** का कैसे उपयोग करें\n"
+        "**@DsSaver_bot** का कैसे उपयोग करें\n"
         "/start कमांड भेजें फिर\n"
         "/login कमांड भेजें\n"
         "────────────────────\n"
