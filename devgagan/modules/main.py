@@ -228,11 +228,11 @@ async def batch_link(_, message):
         await message.reply(response_message)
         return
         
-    join_button = InlineKeyboardButton("Join Channel", url="https://t.me/studywithsv")
+    join_button = InlineKeyboardButton("Join Channel", url="https://t.me/xTaR_Force_Sub")
     keyboard = InlineKeyboardMarkup([[join_button]])
     pin_msg = await app.send_message(
         user_id,
-        f"Batch process started ⚡\nProcessing: 0/{cl}\n\n**Powered by 𓍯𝙎𝙪𝙟𝙖𝙡⚝**",
+        f"Batch process started ⚡\nProcessing: 0/{cl}\n\n**Powered by [꧁༺ȶɦɛ ʊռӄռօառ ֆȶǟʀ༻꧂](https://t.me/xTaR_Force_Sub)**",
         reply_markup=keyboard
     )
     await pin_msg.pin(both_sides=True)
@@ -251,14 +251,14 @@ async def batch_link(_, message):
                     msg = await app.send_message(message.chat.id, f"Processing...")
                     await process_and_upload_link(userbot, user_id, msg.id, link, 0, message)
                     await pin_msg.edit_text(
-                        f"Batch process started ⚡\nProcessing: {i - cs + 1}/{cl}\n\n**__Powered by  𓍯𝙎𝙪𝙟𝙖𝙡⚝__**",
+                        f"Batch process started ⚡\nProcessing: {i - cs + 1}/{cl}\n\n**__Powered by  [꧁༺ȶɦɛ ʊռӄռօառ ֆȶǟʀ༻꧂](https://t.me/xTaR_Force_Sub)**",
                         reply_markup=keyboard
                     )
                     normal_links_handled = True
         if normal_links_handled:
             await set_interval(user_id, interval_minutes=300)
             await pin_msg.edit_text(
-                f"Batch completed successfully for {cl} messages 🎉\n\n**__Powered by  𓍯𝙎𝙪𝙟𝙖𝙡⚝__**",
+                f"Batch completed successfully for {cl} messages 🎉\n\n**__Powered by  [꧁༺ȶɦɛ ʊռӄռօառ ֆȶǟʀ༻꧂](https://t.me/xTaR_Force_Sub)**",
                 reply_markup=keyboard
             )
             await app.send_message(message.chat.id, "😘 𝗖ꪮ𝗺𝗽𝗹𝗲𝘁𝗲 𝗛ꪮ 𝗚𝗮𝘆𝗮 𝗕ꪮ$$ 😎")
@@ -267,7 +267,7 @@ async def batch_link(_, message):
         # Handle special links with userbot
         for i in range(cs, cs + cl):
             if not userbot:
-                await app.send_message(message.chat.id, "Login in bot first ...")
+                await app.send_message(message.chat.id, "/login in bot first ...")
                 users_loop[user_id] = False
                 return
             if user_id in users_loop and users_loop[user_id]:
@@ -277,13 +277,13 @@ async def batch_link(_, message):
                     msg = await app.send_message(message.chat.id, f"Processing...")
                     await process_and_upload_link(userbot, user_id, msg.id, link, 0, message)
                     await pin_msg.edit_text(
-                        f"Batch process started ⚡\nProcessing: {i - cs + 1}/{cl}\n\n**__Powered by CHOSEN ONE ⚝__**",
+                        f"Batch process started ⚡\nProcessing: {i - cs + 1}/{cl}\n\n**__Powered by [꧁༺ȶɦɛ ʊռӄռօառ ֆȶǟʀ༻꧂](https://t.me/xTaR_Force_Sub) ⚝__**",
                         reply_markup=keyboard
                     )
 
         await set_interval(user_id, interval_minutes=300)
         await pin_msg.edit_text(
-            f"Batch completed successfully for {cl} messages 🎉\n\n**__Powered by  𓍯𝙎𝙪𝙟𝙖𝙡⚝__**",
+            f"Batch completed successfully for {cl} messages 🎉\n\n**__Powered by  [꧁༺ȶɦɛ ʊռӄռօառ ֆȶǟʀ༻꧂](https://t.me/xTaR_Force_Sub)**",
             reply_markup=keyboard
         )
         await app.send_message(message.chat.id, "Batch completed successfully! 🎉")
