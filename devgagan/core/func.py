@@ -46,7 +46,7 @@ async def subscribe(app, message):
         await message.reply_photo(photo="https://postimg.cc/K133r7Vf",caption=caption, reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Join Now...", url=f"{url}")]]))
         return 1
       except Exception:
-         await message.reply_text("Something Went Wrong. Contact us @Lallantoop...")
+         await message.reply_text("Something Went Wrong. Contact us @xTaR_Force_Sub...")
          return 1
 async def get_seconds(time_string):
     def extract_value_and_unit(ts):
@@ -251,7 +251,7 @@ async def progress_callback(current, total, progress_message):
     f">*┋ **__Progress:__** {percent:.2f}%\n"
     f">*┋ **__Uploaded:__** {current_mb:.2f} MB / {total_mb:.2f} MB\n\n"
     f"  ╚═══━━━──⚝──━━━═══╝\n\n"
-    f"**__Pwrd by 𓍯𝙎𝙪𝙟𝙖𝙡⚝__**"
+    f"**__Pwrd by [꧁༺ȶɦɛ ʊռӄռօառ ֆȶǟʀ༻꧂](https://t.me/xTaR_Force_Sub)**"
         )
 
         last_update_time = current_time
