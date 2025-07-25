@@ -854,7 +854,7 @@ async def callback_query_handler(event):
         await event.respond("📸 Send the **photo** you want to use as your custom thumbnail.")
 
     elif data == 'pdfwt':
-        await event.respond("🔒 PDF watermarking is available for **Pro+ Plan** users.\n\n👉 Contact [@GeniusJunctionX](https://t.me/GeniusJunctionX) to upgrade.")
+        await event.respond("🔒 PDF watermarking is available for **Pro+ Plan** users.\n\n👉 Contact [꧁༺ȶɦɛ ʊռӄռօառ ֆȶǟʀ༻꧂](https://t.me/xTaR_Force_Sub) to upgrade.")
 
 
     elif event.data == b'uploadmethod':
@@ -867,9 +867,9 @@ async def callback_query_handler(event):
         # Display the buttons for selecting the upload method
         buttons = [
             [Button.inline(f"Pyrogram v2{pyrogram_check}", b'pyrogram')],
-            [Button.inline(f"𓍯𝙎𝙪𝙟𝙖𝙡⚝ v1 ⚡{telethon_check}", b'telethon')]
+            [Button.inline(f"[꧁༺ȶɦɛ ʊռӄռօառ ֆȶǟʀ༻꧂](https://t.me/xTaR_Force_Sub) v1 ⚡{telethon_check}", b'telethon')]
         ]
-        await event.edit("Choose your preferred upload method:\n\n__**Note:** **𓍯𝙎𝙪𝙟𝙖𝙡⚝**, built on Telethon(base), by @studywithsv still in beta.__", buttons=buttons)
+        await event.edit("Choose your preferred upload method:\n\n__**Note:** **[꧁༺ȶɦɛ ʊռӄռօառ ֆȶǟʀ༻꧂](https://t.me/xTaR_Force_Sub)**, built on Telethon(base), by @xTaR_Force_Sub still in beta.__", buttons=buttons)
 
     elif event.data == b'pyrogram':
         save_user_upload_method(user_id, "Pyrogram")
@@ -877,7 +877,7 @@ async def callback_query_handler(event):
 
     elif event.data == b'telethon':
         save_user_upload_method(user_id, "Telethon")
-        await event.edit("Upload method set to **𓍯𝙎𝙪𝙟𝙖𝙡⚝\n\nThanks for choosing this library as it will help me to analyze the error raise issues on github.** ✅")        
+        await event.edit("Upload method set to **[꧁༺ȶɦɛ ʊռӄռօառ ֆȶǟʀ༻꧂](https://t.me/xTaR_Force_Sub)\n\nThanks for choosing this library as it will help me to analyze the error raise issues on github.** ✅")        
         
     elif event.data == b'reset':
         try:
@@ -1078,7 +1078,7 @@ async def handle_large_file(file, sender, edit, caption):
         if freecheck == 1:
             reply_markup = InlineKeyboardMarkup(
                 [
-                    [InlineKeyboardButton("💎 Get Premium to Forward", url="https://t.me/studywithsv")]
+                    [InlineKeyboardButton("💎 Get Premium to Forward", url="https://t.me/xTaR_Force_Sub")]
                 ]
             )
             await app.copy_message(
