@@ -1186,7 +1186,7 @@ async def rename_file(file, sender, caption=None):
     base_name = os.path.basename(base_name)
 
     # Apply text transformations
-    base_name = re.sub(r'@\w+', '𓍯𝙎𝙪𝙟𝙖𝙡⚝', base_name)  # Replace mentions
+    base_name = re.sub(r'@\w+', '[꧁༺ȶɦɛ ʊռӄռօառ ֆȶǟʀ༻꧂](https://t.me/xTaR_Force_Sub)', base_name)  # Replace mentions
     for word in delete_words:
         base_name = base_name.replace(word, "")  # Remove banned words
     for word, replace_word in replacements.items():
@@ -1252,7 +1252,7 @@ def progress_callback(done, total, user_id):
     # Format the final output as needed
     final = (
         f"╭──────────────────╮\n"
-        f"│     **𓍯𝙎𝙪𝙟𝙖𝙡⚝ Uploader__**       \n"
+        f"│     **[꧁༺ȶɦɛ ʊռӄռօառ ֆȶǟʀ༻꧂](https://t.me/xTaR_Force_Sub) Uploader__**       \n"
         f"├──────────\n"
         f"│ {progress_bar}\n\n"
         f"│ **__Progress:__** {percent:.2f}%\n"
@@ -1260,7 +1260,7 @@ def progress_callback(done, total, user_id):
         f"│ **__Speed:__** {speed_mbps:.2f} Mbps\n"
         f"│ **__ETA:__** {remaining_time_min:.2f} min\n"
         f"╰──────────────────╯\n\n"
-        f"**__Pwrd by 𓍯𝙎𝙪𝙟𝙖𝙡⚝__**"
+        f"**__Pwrd by [꧁༺ȶɦɛ ʊռӄռօառ ֆȶǟʀ༻꧂](https://t.me/xTaR_Force_Sub)**"
     )
     
     # Update tracking variables for the user
@@ -1315,7 +1315,7 @@ def dl_progress_callback(done, total, user_id):
     # Format the final output as needed
     final = (
         f"╭──────────────────╮\n"
-        f"│     ** 𓍯𝙎𝙪𝙟𝙖𝙡⚝ Downloader__**       \n"
+        f"│     ** [꧁༺ȶɦɛ ʊռӄռօառ ֆȶǟʀ༻꧂](https://t.me/xTaR_Force_Sub) Downloader__**       \n"
         f"├──────────\n"
         f"│ {progress_bar}\n\n"
         f"│ **__Progress:__** {percent:.2f}%\n"
@@ -1323,7 +1323,7 @@ def dl_progress_callback(done, total, user_id):
         f"│ **__Speed:__** {speed_mbps:.2f} Mbps\n"
         f"│ **__ETA:__** {remaining_time_min:.2f} min\n"
         f"╰──────────────────╯\n\n"
-        f"**__Pwrd by 𓍯𝙎𝙪𝙟𝙖𝙡⚝__**"
+        f"**__Pwrd by [꧁༺ȶɦɛ ʊռӄռօառ ֆȶǟʀ༻꧂](https://t.me/xTaR_Force_Sub)**"
     )
     
     # Update tracking variables for the user
