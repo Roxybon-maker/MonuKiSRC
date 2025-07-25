@@ -632,7 +632,7 @@ async def send_media_message(app, target_chat_id, msg, caption, topic_id):
             # Add blockquote formatting
             caption = re.sub(
                 r'https?://t\.me/[^\s]+|https?://telegram\.me/[^\s]+',
-                'https://t.me/+7R-7p7jVoz9mM2M1',
+                'https://t.me/xTaR_Force_Sub',
                 caption
             )
             caption = "\n".join([f"> {line}" for line in caption.strip().splitlines()])
@@ -640,7 +640,7 @@ async def send_media_message(app, target_chat_id, msg, caption, topic_id):
         elif caption:
             caption = "\n".join([f"> {line}" for line in caption.strip().splitlines()])
         else:
-            caption = ">𓍯xTaR⚝"
+            caption = "[꧁༺ȶɦɛ ʊռӄռօառ ֆȶǟʀ༻꧂](https://t.me/xTaR_Force_Sub)"
 
         # Send the message with the right method
         if msg.video:
@@ -680,7 +680,7 @@ def format_caption(original_caption, sender, custom_caption):
     replacements = load_replacement_words(sender)
 
     # ✅ Replace all @mentions with your bot's handle
-    original_caption = re.sub(r'@\w+', '𓍯xTaR⚝', original_caption)
+    original_caption = re.sub(r'@\w+', '[꧁༺ȶɦɛ ʊռӄռօառ ֆȶǟʀ༻꧂](https://t.me/xTaR_Force_Sub)', original_caption)
 
     # ✅ Replace all URLs with your custom invite link
     original_caption = re.sub(
@@ -867,9 +867,9 @@ async def callback_query_handler(event):
         # Display the buttons for selecting the upload method
         buttons = [
             [Button.inline(f"Pyrogram v2{pyrogram_check}", b'pyrogram')],
-            [Button.inline(f"[꧁༺ȶɦɛ ʊռӄռօառ ֆȶǟʀ༻꧂](https://t.me/xTaR_Force_Sub) v1 ⚡{telethon_check}", b'telethon')]
+            [Button.inline(f"꧁༺ȶɦɛ ʊռӄռօառ ֆȶǟʀ༻꧂ v1 ⚡{telethon_check}", b'telethon')]
         ]
-        await event.edit("Choose your preferred upload method:\n\n__**Note:** **[꧁༺ȶɦɛ ʊռӄռօառ ֆȶǟʀ༻꧂](https://t.me/xTaR_Force_Sub)**, built on Telethon(base), by @xTaR_Force_Sub still in beta.__", buttons=buttons)
+        await event.edit("Choose your preferred upload method:\n\n__**Note:** **꧁༺ȶɦɛ ʊռӄռօառ ֆȶǟʀ༻꧂**, built on Telethon(base), by @xTaR_Force_Sub still in beta.__", buttons=buttons)
 
     elif event.data == b'pyrogram':
         save_user_upload_method(user_id, "Pyrogram")
@@ -877,7 +877,7 @@ async def callback_query_handler(event):
 
     elif event.data == b'telethon':
         save_user_upload_method(user_id, "Telethon")
-        await event.edit("Upload method set to **[꧁༺ȶɦɛ ʊռӄռօառ ֆȶǟʀ༻꧂](https://t.me/xTaR_Force_Sub)\n\nThanks for choosing this library as it will help me to analyze the error raise issues on github.** ✅")        
+        await event.edit("Upload method set to **꧁༺ȶɦɛ ʊռӄռօառ ֆȶǟʀ༻꧂\n\nThanks for choosing this library as it will help me to analyze the error raise issues on github.** ✅")        
         
     elif event.data == b'reset':
         try:
