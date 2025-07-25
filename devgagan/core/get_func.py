@@ -464,11 +464,11 @@ async def handle_sticker(app, msg, target_chat_id, topic_id, edit_id, log_group)
 
 async def get_media_filename(msg):
     if msg.document:
-        return msg.document.file_name or "Document_By_𓍯xTaR⚝.txt"
+        return msg.document.file_name or "Document_By_[꧁༺ȶɦɛ ʊռӄռօառ ֆȶǟʀ༻꧂](https://t.me/xTaR_Force_Sub).txt"
     if msg.video:
-        return msg.video.file_name or "Video_By_𓍯xTaR⚝.mp4"
+        return msg.video.file_name or "Video_By_[꧁༺ȶɦɛ ʊռӄռօառ ֆȶǟʀ༻꧂](https://t.me/xTaR_Force_Sub).mp4"
     if msg.audio:
-        return msg.audio.file_name or "Audio_By_𓍯xTaR⚝.mp3"
+        return msg.audio.file_name or "Audio_By_[꧁༺ȶɦɛ ʊռӄռօառ ֆȶǟʀ༻꧂](https://t.me/xTaR_Force_Sub).mp3"
     if msg.photo:
         return "Image_By_𓍯xTaR⚝.jpg"
     return "File_By_𓍯xTaR⚝.dat"
@@ -689,9 +689,9 @@ def format_caption(original_caption, sender, custom_caption):
         original_caption
     )
     # ✅ Remove everything after 'Extracted By ...'
-    original_caption = re.sub(r'(Extracted By)[^\n]*', r'\1 𓍯xTaR⚝', original_caption, flags=re.IGNORECASE)
-    original_caption = re.sub(r'(Downloaded By)[^\n]*', r'\1 𓍯xTaR⚝', original_caption, flags=re.IGNORECASE)
-    original_caption = re.sub(r'(Downloaded By:)[^\n]*', r'\1 𓍯xTaR⚝', original_caption, flags=re.IGNORECASE)
+    original_caption = re.sub(r'(Extracted By)[^\n]*', r'\1 [꧁༺ȶɦɛ ʊռӄռօառ ֆȶǟʀ༻꧂](https://t.me/xTaR_Force_Sub)', original_caption, flags=re.IGNORECASE)
+    original_caption = re.sub(r'(Downloaded By)[^\n]*', r'\1 [꧁༺ȶɦɛ ʊռӄռօառ ֆȶǟʀ༻꧂](https://t.me/xTaR_Force_Sub)', original_caption, flags=re.IGNORECASE)
+    original_caption = re.sub(r'(Downloaded By:)[^\n]*', r'\1 [꧁༺ȶɦɛ ʊռӄռօառ ֆȶǟʀ༻꧂](https://t.me/xTaR_Force_Sub)', original_caption, flags=re.IGNORECASE)
 
 
 
@@ -764,7 +764,7 @@ user_caption_preferences = {}
 async def set_rename_command(user_id, custom_rename_tag):
     user_rename_preferences[str(user_id)] = custom_rename_tag
 
-get_user_rename_preference = lambda user_id: user_rename_preferences.get(str(user_id), '𓍯𝙎𝙪𝙟𝙖𝙡⚝')
+get_user_rename_preference = lambda user_id: user_rename_preferences.get(str(user_id), '[꧁༺ȶɦɛ ʊռӄռօառ ֆȶǟʀ༻꧂](https://t.me/xTaR_Force_Sub)')
 
 async def set_caption_command(user_id, custom_caption):
     user_caption_preferences[str(user_id)] = custom_caption
