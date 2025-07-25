@@ -794,7 +794,7 @@ async def send_settings_message(chat_id, user_id):
         [Button.inline("🖼️ Set Thumbnail", b'setthumb'), Button.inline("🧲 Remove Thumbnail", b'remthumb')],
         [Button.inline("🗂️ PDF Wtmrk", b'pdfwt'), Button.inline("🎥 Video Wtmrk", b'watermark')],
         [Button.inline("📤 Upload Method", b'uploadmethod')],  # Include the dynamic Fast DL button
-        [Button.url("💞 Contact Owner 🦋", "https://t.me/GeniusJunctionX")]
+        [Button.url("💞 Contact Owner 🦋", "https://t.me/xTaR_Force_Sub")]
     ]
 
     await gf.send_file(
