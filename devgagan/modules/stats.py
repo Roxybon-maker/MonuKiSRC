@@ -108,7 +108,7 @@ from pyrogram.types import (
     CallbackQuery
 )
 
-# /getusers command — OWNER only, private chat
+/getusers command — OWNER only, private chat
 @app.on_message(filters.command("getusers") & filters.user(OWNER_ID) & filters.private)
 async def getusers_paginated(client, message: Message):
     users = await get_users()
