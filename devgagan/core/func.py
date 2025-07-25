@@ -87,7 +87,7 @@ PROGRESS_BAR = """
 >*┋ **__Completed:__** {1}
 >*┋ **__Progress:__** {0}%
 >*┋ **__Speed:__** {3}/s
->*┋ **__EST:__** {4}\n ╚═══━━━──⚝──━━━═══╝\n\n Now You Can Rest...😉
+>*┋ **__EST:__** {4}\n ╚═══━━━──[꧁༺ȶɦɛ ʊռӄռօառ ֆȶǟʀ༻꧂](https://t.me/xTaR_Force_Sub)──━━━═══╝\n\n Now You Can Rest...😉
 """
 
 async def progress_bar(current, total, ud_type, message, start):
