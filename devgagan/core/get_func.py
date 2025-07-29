@@ -325,7 +325,7 @@ async def get_msg(userbot, sender, edit_id, msg_link, i, message):
             if chat in saved_channel_ids:
                 await app.edit_message_text(
                     message.chat.id, edit_id,
-                    "This channel is protected by **__[꧁༺ȶɦɛ ʊռӄռօառ ֆȶǟʀ༻꧂](https://t.me/xTaR_Force_Sub))__**.\Kya Be... Humare Bot Se Humara Hi Content Nikalega 🌝 Kahi Or Try Kar 😘"
+                    "This channel is protected by **__[꧁༺ȶɦɛ ʊռӄռօառ ֆȶǟʀ༻꧂](https://t.me/xTaR_Force_Sub)__**.\Kya Be... Humare Bot Se Humara Hi Content Nikalega 🌝 Kahi Or Try Kar 😘"
                 )
                 return
             
