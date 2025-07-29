@@ -470,8 +470,8 @@ async def get_media_filename(msg):
     if msg.audio:
         return msg.audio.file_name or "Audio_By_[꧁༺ȶɦɛ ʊռӄռօառ ֆȶǟʀ༻꧂](https://t.me/xTaR_Force_Sub).mp3"
     if msg.photo:
-        return "Image_By_𓍯xTaR⚝.jpg"
-    return "File_By_𓍯xTaR⚝.dat"
+        return "Image_By_[꧁༺ȶɦɛ ʊռӄռօառ ֆȶǟʀ༻꧂](https://t.me/xTaR_Force_Sub).jpg"
+    return "File_By_[꧁༺ȶɦɛ ʊռӄռօառ ֆȶǟʀ༻꧂](https://t.me/xTaR_Force_Sub).dat"
 
 
 
@@ -494,11 +494,11 @@ async def get_final_caption(msg, sender):
     custom_caption = get_user_caption_preference(sender)
     final_caption = f"{original_caption}\n\n{custom_caption}" if custom_caption else original_caption
 
-    # Replace @mentions with @Real_Pirates
-    final_caption = re.sub(r'@\w+', '𓍯xTaR⚝', final_caption)
+    # Replace @mentions with @xTaR_Force_Sub
+    final_caption = re.sub(r'@\w+', '[꧁༺ȶɦɛ ʊռӄռօառ ֆȶǟʀ༻꧂](https://t.me/xTaR_Force_Sub)', final_caption)
 
     # Replace all links with your channel link
-    final_caption = re.sub(r'https?://\S+|www\.\S+', 'https://t.me/xTaR_Force_Sub', final_caption)
+    final_caption = re.sub(r'https?://\S+|www\.\S+', '[꧁༺ȶɦɛ ʊռӄռօառ ֆȶǟʀ༻꧂](https://t.me/xTaR_Force_Sub)', final_caption)
 
     # Perform additional replacements from user-defined rules
     replacements = load_replacement_words(sender)
@@ -632,7 +632,7 @@ async def send_media_message(app, target_chat_id, msg, caption, topic_id):
             # Add blockquote formatting
             caption = re.sub(
                 r'https?://t\.me/[^\s]+|https?://telegram\.me/[^\s]+',
-                'https://t.me/xTaR_Force_Sub',
+                '[꧁༺ȶɦɛ ʊռӄռօառ ֆȶǟʀ༻꧂](https://t.me/xTaR_Force_Sub)',
                 caption
             )
             caption = "\n".join([f"> {line}" for line in caption.strip().splitlines()])
@@ -685,7 +685,7 @@ def format_caption(original_caption, sender, custom_caption):
     # ✅ Replace all URLs with your custom invite link
     original_caption = re.sub(
         r'https?://t\.me/[^\s]+|https?://telegram\.me/[^\s]+',
-        'https://t.me/xTaR_Force_Sub',
+        '[꧁༺ȶɦɛ ʊռӄռօառ ֆȶǟʀ༻꧂](https://t.me/xTaR_Force_Sub)',
         original_caption
     )
     # ✅ Remove everything after 'Extracted By ...'
@@ -1260,7 +1260,7 @@ def progress_callback(done, total, user_id):
         f"│ **__Speed:__** {speed_mbps:.2f} Mbps\n"
         f"│ **__ETA:__** {remaining_time_min:.2f} min\n"
         f"╰──────────────────╯\n\n"
-        f"**__Pwrd by [꧁༺ȶɦɛ ʊռӄռօառ ֆȶǟʀ༻꧂](https://t.me/xTaR_Force_Sub)**"
+        f"**[꧁༺ȶɦɛ ʊռӄռօառ ֆȶǟʀ༻꧂](https://t.me/xTaR_Force_Sub)**"
     )
     
     # Update tracking variables for the user
@@ -1323,7 +1323,7 @@ def dl_progress_callback(done, total, user_id):
         f"│ **__Speed:__** {speed_mbps:.2f} Mbps\n"
         f"│ **__ETA:__** {remaining_time_min:.2f} min\n"
         f"╰──────────────────╯\n\n"
-        f"**__Pwrd by [꧁༺ȶɦɛ ʊռӄռօառ ֆȶǟʀ༻꧂](https://t.me/xTaR_Force_Sub)**"
+        f"**[꧁༺ȶɦɛ ʊռӄռօառ ֆȶǟʀ༻꧂](https://t.me/xTaR_Force_Sub)**"
     )
     
     # Update tracking variables for the user
