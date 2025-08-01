@@ -43,7 +43,13 @@ async def set_session(user_id, session):
     if data and data.get("_id"):
         await db.update_one({"_id": user_id}, {"$set": {"session": session}})
     else:
-        await db.insert_one({"_id": user_id, "session": session})
+        await db.insert_one({"_id": user_id, "session": session}})
+
+async def get_session(user_id):
+    data = await get_data(user_id)
+    if data and "session" in data:
+        return data["session"]
+    return None
 async def clean_words(user_id, new_clean_words):
     data = await get_data(user_id)
     if data and data.get("_id"):
