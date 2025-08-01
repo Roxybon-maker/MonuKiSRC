@@ -9,7 +9,7 @@ COPY requirements.txt .
 RUN pip3 install wheel
 RUN pip3 install --no-cache-dir -U -r requirements.txt
 
-# 👇 Create session directory
+# 👇 Add this line
 RUN mkdir -p /app/sessions
 
 WORKDIR /app
