@@ -1,4 +1,4 @@
-from pyrogram.session import StringSession
+from pyrogram.types import StringSession
 from pyrogram.errors import (
     ApiIdInvalid, PhoneNumberInvalid, PhoneCodeInvalid, PhoneCodeExpired,
     SessionPasswordNeeded, PasswordHashInvalid
