@@ -1,7 +1,8 @@
 FROM python:3.10.4-slim-bullseye
 
 RUN apt update && apt upgrade -y && \
-    apt install -y git curl python3-pip ffmpeg wget bash neofetch software-properties-common
+    apt install -y git curl python3-pip ffmpeg wget bash neofetch software-properties-common && \
+    python3 -m pip install --upgrade pip  # ✅ pip latest ho jayega
 
 COPY requirements.txt .
 
