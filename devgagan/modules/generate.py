@@ -1,69 +1,65 @@
-# session.py
-
-from pyrogram import Client, filters
-from devgagan import app
-from config import API_ID as api_id, API_HASH as api_hash
-from devgagan.core.mongo import db
+from pyrogram.sessions import StringSession
 from pyrogram.errors import (
-    ApiIdInvalid,
-    PhoneNumberInvalid,
-    PhoneCodeInvalid,
-    PhoneCodeExpired,
-    SessionPasswordNeeded,
-    PasswordHashInvalid
+    ApiIdInvalid, PhoneNumberInvalid, PhoneCodeInvalid, PhoneCodeExpired,
+    SessionPasswordNeeded, PasswordHashInvalid
 )
-import random
-import string
+from pyrogram import Client
+from config import API_ID, API_HASH
+from devgagan.core.mongo import db  # ensure this has `set_session`
 
-def generate_random_name(length=8):
-    return ''.join(random.choices(string.ascii_letters + string.digits, k=length))
+@app.on_message(filters.command("session") & filters.private)
+async def generate_user_session(client, message: Message):
+    user_id = message.from_user.id
+    await message.reply("📱 Send your phone number with country code (e.g. +911234567890):")
 
-@app.on_message(filters.command("session"))
-async def session_generate(_, message):
-    user_id = message.chat.id
-    await message.reply("📞 Please enter your phone number with the country code. \nExample: +919876543210\n\n⚠️ Use a secondary Telegram account.")
-    
     try:
-        number = await _.ask(user_id, "Waiting for phone number...", filters=filters.text, timeout=300)
-        phone_number = number.text
+        phone = await client.listen(user_id, timeout=60)
+        phone_number = phone.text.strip()
     except:
-        await message.reply("❌ Timeout. Please try again.")
-        return
+        return await message.reply("❌ Timeout. Please try again with /session")
 
-    session_name = f"session_{generate_random_name()}"
-    client = Client(session_name, api_id, api_hash)
-
-    await client.connect()
-
-    try:
-        code = await client.send_code(phone_number)
-    except ApiIdInvalid:
-        await message.reply("❌ Invalid API ID or HASH.")
-        return
-    except PhoneNumberInvalid:
-        await message.reply("❌ Invalid phone number.")
-        return
+    user_client = Client(
+        name="gen",
+        api_id=API_ID,
+        api_hash=API_HASH,
+        session_string=StringSession()
+    )
 
     try:
-        otp = await _.ask(user_id, "📩 Enter the OTP (Example: 1 2 3 4 5):", filters=filters.text, timeout=300)
-        otp_code = otp.text.replace(" ", "")
-        await client.sign_in(phone_number, code.phone_code_hash, otp_code)
-    except PhoneCodeInvalid:
-        await message.reply("❌ Invalid OTP.")
-        return
-    except PhoneCodeExpired:
-        await message.reply("❌ OTP expired.")
-        return
-    except SessionPasswordNeeded:
+        await user_client.connect()
+        sent_code = await user_client.send_code(phone_number)
+        await message.reply("🔐 OTP sent! Now send the OTP code here:")
+
+        otp = await client.listen(user_id, timeout=60)
+        code = otp.text.strip()
+
         try:
-            pw_msg = await _.ask(user_id, "🔐 Two-step verification enabled. Enter your password:", filters=filters.text, timeout=300)
-            await client.check_password(password=pw_msg.text)
-        except PasswordHashInvalid:
-            await message.reply("❌ Incorrect password.")
-            return
+            await user_client.sign_in(phone_number, sent_code.phone_code_hash, code)
+        except SessionPasswordNeeded:
+            await message.reply("🔒 Your account has 2FA enabled. Send your password:")
+            pwd = await client.listen(user_id, timeout=60)
+            await user_client.check_password(pwd.text.strip())
 
-    string_session = await client.export_session_string()
-    await db.set_session(user_id, string_session)
-    await client.disconnect()
-    
-    await message.reply(f"✅ Session Generated!\n\n`{string_session}`\n\n⚠️ **Keep it private!**\n\n__Powered by @xTaR_Force_Sub")
+        string_session = user_client.export_session_string()
+        await db.set_session(user_id, string_session)
+
+        await message.reply(
+            f"✅ Session generated successfully!\n\n"
+            f"`{string_session}`\n\n"
+            "⚠️ Save it securely. Do **NOT** share it publicly."
+        )
+
+    except ApiIdInvalid:
+        await message.reply("❌ Invalid API credentials. Check API_ID/API_HASH.")
+    except PhoneNumberInvalid:
+        await message.reply("❌ Invalid phone number format.")
+    except PhoneCodeInvalid:
+        await message.reply("❌ Incorrect OTP. Try again.")
+    except PhoneCodeExpired:
+        await message.reply("⌛ OTP expired. Start again with /session.")
+    except PasswordHashInvalid:
+        await message.reply("❌ Incorrect 2FA password.")
+    except Exception as e:
+        await message.reply(f"⚠️ Error: `{e}`")
+    finally:
+        await user_client.disconnect()
