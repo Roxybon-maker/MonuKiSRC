@@ -1,5 +1,6 @@
 from pyrogram import Client, filters
-from pyrogram.types import StringSession, Message
+from pyrogram.types import Message
+from pyrogram.session import StringSession
 from pyrogram.errors import (
     ApiIdInvalid, PhoneNumberInvalid, PhoneCodeInvalid, PhoneCodeExpired,
     SessionPasswordNeeded, PasswordHashInvalid
