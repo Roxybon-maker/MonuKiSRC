@@ -14,14 +14,15 @@
 
 import asyncio
 import logging
+import time
+import os
+
 from pyrogram import Client
 from pyrogram.enums import ParseMode 
 from config import API_ID, API_HASH, BOT_TOKEN, STRING, MONGO_DB
 from telethon.sync import TelegramClient
 from telethon.errors import FloodWaitError
 from motor.motor_asyncio import AsyncIOMotorClient
-import time
-import os
 
 loop = asyncio.get_event_loop()
 
@@ -32,6 +33,7 @@ logging.basicConfig(
 
 botStartTime = time.time()
 
+# Pyrogram Clients
 app = Client(
     ":RestrictBot:",
     api_id=API_ID,
@@ -43,8 +45,8 @@ app = Client(
 
 pro = Client("ggbot", api_id=API_ID, api_hash=API_HASH, session_string=STRING)
 
-# 🔒 Safe session path for Telethon client
-SESSION_PATH = "/app/sessions/sexrepo"  # Make sure this directory exists or is mounted in Docker
+# Telethon Client with persistent session path
+SESSION_PATH = "/app/sessions/sexrepo"
 
 try:
     sex = TelegramClient(SESSION_PATH, API_ID, API_HASH)
@@ -68,8 +70,7 @@ async def setup_database():
     await create_ttl_index()
     print("MongoDB TTL index created.")
 
-# You can call this in your main bot file before starting the bot
-
+# Main startup logic
 async def restrict_bot():
     global BOT_ID, BOT_NAME, BOT_USERNAME
     await setup_database()
